@@ -1,9 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-    <title>Welcome!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADORA - Clothing Store</title>
+    <style>
+        body {
+            font-family: "Tajawal", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #faf7f4;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: #ffffff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        header img {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 26px;
+            font-weight: bold;
+        }
+        .section-title {
+            font-size: 22px;
+            margin: 40px 0 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #444;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform .2s;
+        }
+        .card:hover {
+            transform: scale(1.03);
+        }
+        .card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        .name {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .price {
+            color: #777;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .btn-whatsapp {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: #ffffff;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello from my website!</h1>
+
+<header>
+    <img src="LOGO.png" alt="شعار ADORA">
+    <div class="title">ADORA - Clothing Store</div>
+</header>
+
+<!-- قسم الإكسسوارات -->
+<div class="section-title">الإكسسوارات</div>
+<div class="products">
+    <div class="card">
+        <img src="" alt="منتج">
+        <div class="name">اسم المنتج</div>
+        <div class="price">00 Rs</div>
+        <a class="btn-whatsapp" href="https://wa.me/923126666374" target="_blank">اطلب عبر واتساب</a>
+    </div>
+</div>
+
+<!-- قسم ملابس الأطفال -->
+<div class="section-title">ملابس الأطفال (1 - 12 سنة)</div>
+<div class="products">
+    <div class="card">
+        <img src="" alt="منتج">
+        <div class="name">اسم المنتج</div>
+        <div class="price">00 Rs</div>
+        <a class="btn-whatsapp" href="https://wa.me/923126666374" target="_blank">اطلب عبر واتساب</a>
+    </div>
+</div>
+
+<footer>
+    جميع الحقوق محفوظة © ADORA
+</footer>
+
 </body>
 </html>
