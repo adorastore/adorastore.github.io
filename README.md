@@ -1,1 +1,1 @@
-# adora.github.io
+# adorastore.github.io
