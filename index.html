@@ -1,121 +1,149 @@
+<!-- Base structure for Adora Store webpage with two main sections: Accessories and Kids Clothing -->
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADORA - Clothing Store</title>
+    <title>Adora Store</title>
     <style>
         body {
-            font-family: "Tajawal", sans-serif;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
             margin: 0;
             padding: 0;
-            background: #faf7f4;
-            color: #333;
         }
         header {
-            text-align: center;
-            padding: 30px 20px;
             background: #ffffff;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        header img {
-            width: 150px;
-            margin-bottom: 10px;
-        }
-        .title {
-            font-size: 26px;
-            font-weight: bold;
+        h1 {
+            margin: 0;
+            font-size: 28px;
         }
         .section-title {
-            font-size: 22px;
-            margin: 40px 0 10px;
+            font-size: 26px;
             text-align: center;
-            font-weight: bold;
-            color: #444;
+            margin-top: 40px;
         }
-        .products {
+        .subcategory-title {
+            font-size: 22px;
+            margin-top: 20px;
+            text-align: left;
+            padding-left: 20px;
+        }
+        .products-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
             padding: 20px;
         }
-        .card {
-            background: #fff;
-            border-radius: 14px;
-            padding: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform .2s;
-        }
-        .card:hover {
-            transform: scale(1.03);
-        }
-        .card img {
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-        .name {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .price {
-            color: #777;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        .btn-whatsapp {
-            display: inline-block;
-            padding: 10px 15px;
-            background: #25D366;
-            color: #fff;
-            border-radius: 8px;
-            font-size: 16px;
-            text-decoration: none;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+        .product-card {
             background: #ffffff;
-            color: #666;
-            border-top: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .order-btn {
+            display: block;
+            margin-top: 10px;
+            background: #25d366;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        select {
+            padding: 8px;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 6px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="LOGO.png" alt="ADORA Logo">
-    <div class="title">ADORA - Clothing Store</div>
+    <h1>Adora Store</h1>
+    <p>Soft colors • WhatsApp ordering • Kids Clothing & Accessories</p>
 </header>
 
 <!-- Accessories Section -->
-<div class="section-title">Accessories</div>
-<div class="products">
-    <div class="card">
-        <img src="" alt="Product">
-        <div class="name">Product Name</div>
-        <div class="price">Rs 00</div>
-        <a class="btn-whatsapp" href="https://wa.me/923126666374" target="_blank">Order on WhatsApp</a>
-    </div>
+<h2 class="section-title">Accessories</h2>
+<p style="text-align:center; color:#777;">Available in Silver & Gold — No sizes</p>
+<div id="accessories" class="products-container">
+    <!-- Accessories products will be added here -->
 </div>
 
 <!-- Kids Clothing Section -->
-<div class="section-title">Kids Clothing (1 - 12 Years)</div>
-<div class="products">
-    <div class="card">
-        <img src="" alt="Product">
-        <div class="name">Product Name</div>
-        <div class="price">Rs 00</div>
-        <a class="btn-whatsapp" href="https://wa.me/923126666374" target="_blank">Order on WhatsApp</a>
-    </div>
+<h2 class="section-title">Kids Clothing</h2>
+
+<!-- Boys -->
+<h3 class="subcategory-title">Boys</h3>
+<div id="boys" class="products-container">
+    <!-- Boys products go here -->
+
+<div class="product-card">
+    <img src="drift_king_boys_set.jpg" alt="Drift King Boys Set">
+
+    <h3>Drift King – Boys Two-Piece Set</h3>
+
+    <label for="size">Choose Size:</label>
+    <select class="size-select" onchange="updateDriftKingPrice(this)">
+        <option value="" disabled selected>Select Size</option>
+        <option value="1-2">1–2 Years (Rs 1200)</option>
+        <option value="3-4">3–4 Years (Rs 1200)</option>
+        <option value="5-6">5–6 Years (Rs 1200)</option>
+        <option value="7-8">7–8 Years (Rs 1500)</option>
+        <option value="9-10">9–10 Years (Rs 1500)</option>
+        <option value="11-12">11–12 Years (Rs 1500)</option>
+    </select>
+
+    <p class="price-label" id="driftking-price">Price: —</p>
+
+    <a id="driftking-whatsapp" class="order-btn" 
+       href="https://wa.me/923126666374" target="_blank">
+       Order on WhatsApp
+    </a>
 </div>
 
-<footer>
-    All rights reserved © ADORA
-</footer>
+<script>
+function updateDriftKingPrice(select) {
+    let size = select.value;
+    let priceElement = document.getElementById("driftking-price");
+    let whatsappBtn = document.getElementById("driftking-whatsapp");
+
+    let price = 0;
+
+    if (size === "1-2" || size === "3-4" || size === "5-6") {
+        price = 1200;
+    } else {
+        price = 1500;
+    }
+
+    priceElement.textContent = "Price: Rs " + price;
+
+    let message = encodeURIComponent(
+        "Hello, I want to order: Drift King Boys Set\nSize: " + size + " Years\nPrice: Rs " + price
+    );
+
+    whatsappBtn.href = "https://wa.me/923126666374?text=" + message;
+}
+</script>
+</div>
+
+<!-- Girls -->
+<h3 class="subcategory-title">Girls</h3>
+<div id="girls" class="products-container">
+    <!-- Girls products go here -->
+</div>
 
 </body>
 </html>
