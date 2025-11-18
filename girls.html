@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Girls — ADORA</title>
+<style>
+  body{ margin:0; font-family:Arial; background:#fffaf8; color:#222;}
+  .hero{ height:180px; background-image:url('girls_header.jpg'); background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; color:#fff; text-shadow:0 3px 8px rgba(0,0,0,0.4) }
+  .container{ max-width:1050px; margin:20px auto; padding:0 16px; }
+  h1{ margin:12px 0; font-size:26px; text-align:center;}
+  .products{ display:grid; gap:18px; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); }
+  .card{ background:#fff; padding:14px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.06); text-align:center;}
+  .card img{ width:100%; height:240px; object-fit:cover; border-radius:10px;}
+  label{display:block; margin-top:10px; font-weight:600;}
+  select{ width:100%; padding:8px; margin-top:8px; border-radius:8px; }
+  .price{ margin-top:10px; font-weight:700; color:#333; }
+  .order{ display:inline-block; margin-top:10px; padding:10px 14px; background:#25D366; color:#fff; border-radius:10px; text-decoration:none; font-weight:700;}
+  .back{ display:inline-block; margin:6px 0 20px; color:#666; text-decoration:none;}
+</style>
+</head>
+<body>
+  <div class="hero"><h2>Girls Collection</h2></div>
+
+  <div class="container">
+    <a class="back" href="index.html">← Back to Home</a>
+    <h1>Shop Girls (1–12 yrs)</h1>
+
+    <div class="products">
+      <!-- Example product slot — copy/paste to add more -->
+      <!--
+      <div class="card" id="product-XX">
+        <img src="PUT_IMAGE.jpg" alt="Product">
+        <h3>Product Name</h3>
+        <label>Choose size group</label>
+        <select onchange="updatePrice_template(this,'price-xx','wh-xx')">
+          <option value="" disabled selected>Select size</option>
+          <option value="1-2" data-price="1200">1–2 Years (Rs 1200)</option>
+          ...
+        </select>
+        <p class="price" id="price-xx">Price: —</p>
+        <a id="wh-xx" class="order" href="https://wa.me/923126666374" target="_blank">Order on WhatsApp</a>
+      </div>
+      -->
+    </div>
+  </div>
+
+<script>
+/* use the helper described in boys.html for additional products */
+function updatePrice_template(sel, priceId, whId, productName){
+  const option = sel.options[sel.selectedIndex];
+  const price = option.getAttribute('data-price');
+  document.getElementById(priceId).textContent = 'Price: Rs ' + price;
+  const message = encodeURIComponent(`Hello, I want to order: ${productName}\nSize: ${sel.value}\nPrice: Rs ${price}`);
+  document.getElementById(whId).href = 'https://wa.me/923126666374?text=' + message;
+}
+</script>
+</body>
+</html>
